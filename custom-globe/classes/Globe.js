@@ -19,7 +19,7 @@ export default class Globe {
       const material = this._getGlobeMaterial();
   
       this.globeMesh = new THREE.Mesh(geometry, material);
-      this.globeMesh.rotation.y = 4.8;
+      this.globeMesh.rotation.y = Math.PI;
     }
 
     _getBasicMaterial() {
