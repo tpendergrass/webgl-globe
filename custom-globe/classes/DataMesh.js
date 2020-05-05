@@ -39,12 +39,12 @@ export default class DataMesh {
         if(!this.templateMesh.matrixAutoUpdate){
             this.templateMesh.updateMatrix();
         }
-        this.compoundMesh.geometry.merge(this.templateMesh.geometry, this.templateMesh.matrix);
+        this.compoundMesh.geometry.mergeMesh(this.templateMesh);
     }
 
     _createDataPointTemplate() {
         const geometry = new THREE.BoxGeometry(0.75, 0.75, 1);
-        geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0,0,-0.5));
+        geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0,0,-0.5));
         this.templateMesh = new THREE.Mesh(geometry);
     }
 }
